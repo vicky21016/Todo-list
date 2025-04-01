@@ -37,7 +37,7 @@
 ```
 ## 安裝
 
-**首先，克隆本專案**：git clone https://github.com/yourusername/todo-app.git
+**首先，克隆本專案**：git clone https://github.com/vicky21016/my-app.git
 
 **然後安裝依賴：**
 cd todo-app
