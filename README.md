@@ -1,4 +1,4 @@
-# Todo List Application
+# Todo List
 
 這是一個使用 React、Next.js 和 CSS 實作的簡單待辦清單應用。用戶可以新增、刪除、編輯待辦事項，並切換待辦事項的完成狀態。
 
@@ -37,12 +37,11 @@
 ```
 ## 安裝
 
-- **首先，克隆本專案**：git clone https://github.com/yourusername/todo-app.git
+**首先，克隆本專案**：git clone https://github.com/yourusername/todo-app.git
 
-- **然後安裝依賴：**
+**然後安裝依賴：**
 cd todo-app
 npm install
 
-- **開發模式**
-啟動開發伺服器：npm run dev
-開啟瀏覽器並訪問 http://localhost:3000 查看應用。
+**啟動開發伺服器**：npm run dev
+**開啟瀏覽器並訪問** ：http://localhost:3000 查看應用。
