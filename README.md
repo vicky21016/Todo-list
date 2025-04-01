@@ -44,4 +44,5 @@ cd todo-app
 npm install
 
 **啟動開發伺服器**：npm run dev
+
 **開啟瀏覽器並訪問** ：http://localhost:3000 查看應用。
