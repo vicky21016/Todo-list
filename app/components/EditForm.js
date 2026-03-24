@@ -6,7 +6,7 @@ export default function EditForm({ todo, editTodo }) {
   const [content, setContent] = useState(todo.content);
   const handleSubmit = (e) => {
     e.preventDefault();
-    editTodo(todo.id, content); // 編輯指定 id 的待辦事項，並將 content（新的內容）傳遞給 editTodo 函式
+    editTodo(todo.id, content); 
   };
   return (
     <form className={styles.createForm} onSubmit={handleSubmit}>

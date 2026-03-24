@@ -7,13 +7,13 @@ import styles from "../page.module.css";
 
 // TodoWrapper 負責管理待辦事項的狀態與邏輯，包括新增、刪除、切換完成狀態等
 export default function TodoWrapper() {
-  // 儲存待辦事項陣列
+
   const [todos, setTodos] = useState([
     {
       content: "Learn React.js",
-      id: Math.random(), // 產生唯一 ID
-      isCompleted: false, // 是否完成
-      isEditing: false, // 是否編輯
+      id: Math.random(), 
+      isCompleted: false, 
+      isEditing: false, 
     },
     {
       content: "Learn Golang",
@@ -59,7 +59,7 @@ export default function TodoWrapper() {
     setTodos(
       todos.filter((todo) => {
         // 過濾陣列
-        return todo.id !== id; // 回傳 todo.id 不等於目標 id 的項目
+        return todo.id !== id; 
       })
     );
   };
@@ -70,8 +70,7 @@ export default function TodoWrapper() {
       todos.map((todo) => {
         // 透過 map 產生新陣列，找到對應 id 的項目
         return todo.id === id
-          ? { ...todo, isCompleted: !todo.isCompleted } // 如果 id 相等，反轉 isCompleted
-          : todo; // 如果不相等，保持原狀，直接回傳該 todo
+          ? { ...todo, isCompleted: !todo.isCompleted } : todo;
       })
     );
   };
@@ -104,23 +103,23 @@ export default function TodoWrapper() {
   // 排序邏輯：根據 isSorted 決定顯示順序
   const sortedTodos = isSorted
     ? [...todos].sort((a, b) => a.isCompleted - b.isCompleted) // sort() 排序。已完成的放後面
-    : todos; // 維持原本的順序
+    : todos; 
 
   // 計算已完成的事項數量
-  // 使用 filter() 過濾出已完成的事項，然後使用 length 獲得已完成事項的數量
   const completedCount = todos.filter((todo) => todo.isCompleted).length;
   // 代表待辦事項的總數
   const totalCount = todos.length;
-  // (已完成事項數量 / 總事項數量) * 100，並使用 Math.round() 將結果四捨五入至整數
   const completionRate =
     totalCount === 0 ? 0 : Math.round((completedCount / totalCount) * 100);
 
   // 自動滾動到最下方
   useEffect(() => {
     if (todoListRef.current) {
-      // current 是用來存取 ref 中的 DOM 元素
       // 獲取滾動條當前的位置
-      todoListRef.current.scrollTop = todoListRef.current.scrollHeight; // 返回容器的整個內容高度，滾動條移動到最底部
+      todoListRef.current.scrollTo({
+      top: todoListRef.current.scrollHeight, 
+      behavior: 'smooth' 
+    }); 
     }
   }, [todos]); // 每次 todos 更新時都會觸發滾動
 

@@ -13,7 +13,7 @@ export default function Todo({
     <EditForm todo={todo} editTodo={editTodo} />
   ) : (
     <div
-      className={`${styles.todo} ${todo.isCompleted ? styles.completed : ""}`} // 如果 todo.isCompleted 為 true，則加入 styles.completed 樣式
+      className={`${styles.todo} ${todo.isCompleted ? styles.completed : ""}`}
     >
       <div className={styles.checkbox}>
         <i
